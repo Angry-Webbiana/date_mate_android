@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">DateMate</string>
-    <string name="title_home">Home</string>
-    <string name="title_group">Group</string>
-    <string name="title_followers">Followers</string>
-    <string name="title_my_page">My Page</string>
+    <string name="title_home">홈</string>
+    <string name="title_group">그룹</string>
+    <string name="title_followers">친구 목록</string>
+    <string name="title_my_page">내 페이지</string>
+    <string name="title_settings">설정</string>
     
     <string name="title_onboarding">에 오신 것을 환영합니다.</string>
     <string name="contents_onboarding">우리 동네 뉴스가 내 손 안에</string>

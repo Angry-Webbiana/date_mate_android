@@ -71,17 +71,6 @@ class SplashActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
-        Glide.with(this).asGif().load(R.raw.animated_logo).listener(gifListener).into(binding.ivSplashLogo)
-
-        /*val handler = Handler()
-        handler.postDelayed(Runnable {
-            if (sharedPrefRepository.isLogin()) {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            } else {
-                startActivity(Intent(this, OnboardingActivity::class.java))
-                finish()
-            }
-        }, 3000)*/
+        Glide.with(this).asGif().load(R.drawable.animated_logo).listener(gifListener).into(binding.ivSplashLogo)
     }
 }

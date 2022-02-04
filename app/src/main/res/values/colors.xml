@@ -12,6 +12,10 @@
     <color name="background_color">#E5E5E5</color>
     <color name="default_background_color">#FAFAFA</color>
     <color name="default_text_color">#494646</color>
+    <color name="title_text_color">#9A4F4A</color>
     <color name="sign_up_explain_text_color">#99FF0C0C</color>
+    <color name="bnv_default_icon_color">#737373</color>
+
+    <color name="calendar_selected_1">#D4AA9D</color>
 
 </resources>

@@ -19,9 +19,6 @@ class SignUpViewModel @Inject constructor(
     private val _isSubmitSuccessLiveData = MutableLiveData<Int>()
     val isSubmitSuccessLiveData: LiveData<Int> get() = _isSubmitSuccessLiveData
 
-    private val _signUpFailTextLiveData = MutableLiveData<Int>()
-    val signUpFailTextLiveData: LiveData<Int> get() = _signUpFailTextLiveData
-
     fun submitSignUp(email: String, userName: String, pw: String) {
         postSignUpUseCase.execute(SignUp(email, userName, pw))
             .subscribe(object: SingleObserver<Any> {
