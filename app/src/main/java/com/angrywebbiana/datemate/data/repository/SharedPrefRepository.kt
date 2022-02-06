@@ -1,6 +1,6 @@
 package com.angrywebbiana.datemate.data.repository
 
-import com.angrywebbiana.datemate.data.local.SharedPrefModule
+import com.angrywebbiana.datemate.data.local.sharedpref.SharedPrefModule
 import javax.inject.Inject
 
 class SharedPrefRepository @Inject constructor(
@@ -10,6 +10,11 @@ class SharedPrefRepository @Inject constructor(
     fun isLogin(): Boolean = sharedPrefModule.login
     fun setLogin(value: Boolean) {
         sharedPrefModule.login = value
+    }
+
+    fun getUserSeq(): String? = sharedPrefModule.userSeq
+    fun setUserSeq(value: String) {
+        sharedPrefModule.userSeq = value
     }
 
     fun getEmail(): String? = sharedPrefModule.email

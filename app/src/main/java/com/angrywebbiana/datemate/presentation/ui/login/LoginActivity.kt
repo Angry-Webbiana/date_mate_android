@@ -29,11 +29,11 @@ class LoginActivity: AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener { _ ->
             // TODO 401 떨어지는데 확인 후 테스트 코드 되돌리기
-            //loginViewModel.requestLogin(binding.etLoginId.text.toString(), binding.etLoginPw.text.toString())
-            //binding.loginProgressBar.visibility = View.VISIBLE
-            //window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            loginViewModel.requestLogin(binding.etLoginId.text.toString(), binding.etLoginPw.text.toString())
+            binding.loginProgressBar.visibility = View.VISIBLE
+            window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            /*startActivity(Intent(this, MainActivity::class.java))
+            finish()*/
         }
 
         binding.btnSignUp.setOnClickListener { _ ->

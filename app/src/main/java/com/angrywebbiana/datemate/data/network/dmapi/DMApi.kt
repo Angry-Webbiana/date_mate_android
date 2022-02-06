@@ -2,11 +2,10 @@ package com.angrywebbiana.datemate.data.network.dmapi
 
 import com.angrywebbiana.datemate.domain.model.request.Login
 import com.angrywebbiana.datemate.domain.model.request.SignUp
+import com.angrywebbiana.datemate.domain.model.response.FollowersResponse
 import com.angrywebbiana.datemate.domain.model.response.LoginResponse
 import io.reactivex.rxjava3.core.Single
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface DMApi {
     @Headers("Accept: application/json", "Content-Type: application/json")
@@ -20,4 +19,10 @@ interface DMApi {
     fun postLogin(
         @Body login: Login
     ): Single<LoginResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @GET(BaseUrl.DM_API_GET_FOLLOWERS_LIST)
+    fun getFollowers(
+        @Header("Authorization") auth: String
+    ): Single<FollowersResponse>
 }

@@ -1,4 +1,4 @@
-package com.angrywebbiana.datemate.data.local
+package com.angrywebbiana.datemate.data.local.sharedpref
 
 import android.content.Context
 import dagger.Module
@@ -17,6 +17,10 @@ class SharedPrefModule @Inject constructor(
     var login: Boolean
         get() = sharedPref.getBoolean("login", false)
         set(value) = sharedPref.edit().putBoolean("login", value).apply()
+
+    var userSeq: String?
+        get() = sharedPref.getString("userSeq", "")
+        set(value) = sharedPref.edit().putString("userSeq", value).apply()
 
     var email: String?
         get() = sharedPref.getString("email", "")

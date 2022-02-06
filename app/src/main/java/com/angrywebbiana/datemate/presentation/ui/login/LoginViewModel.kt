@@ -31,8 +31,9 @@ class LoginViewModel @Inject constructor(
                     if (t?.responseCode == "SUCCESS") {
                         sharedPrefRepository.setLogin(value = true)
                         sharedPrefRepository.setEmail(id)
-                        sharedPrefRepository.setToken(t.message.token)
-                        // TODO UserName 저장 필요
+                        sharedPrefRepository.setUserName(t.message.user.userName)
+                        sharedPrefRepository.setUserSeq(t.message.user.userSeq)
+                        sharedPrefRepository.setToken("Bearer ${t.message.token}")
                         _isLoginSuccessLiveData.value = true
                     } else {
                         sharedPrefRepository.setLogin(value = false)

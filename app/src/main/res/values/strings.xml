@@ -37,6 +37,12 @@
     <string name="home_info_hello">Hello. %s,</string>
     <string name="home_info_location">The current location is\n%s %s %s.</string>
     <string name="home_info_weather">The current temperature in %s is %d℃.</string>
+    <string name="home_not_exist_schedule">There\'s no schedule.</string>
+
+    <string name="add_schedule_title_hint">Enter the title.</string>
+    <string name="add_schedule_contents_hint">Enter the content.</string>
+
+    <string name="is_not_exist_followers">There\'s no friend added.</string>
 
     <string name="news_dynamic">%s news</string>
 
