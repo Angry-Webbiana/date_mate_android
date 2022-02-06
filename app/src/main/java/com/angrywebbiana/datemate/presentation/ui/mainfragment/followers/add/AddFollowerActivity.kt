@@ -78,6 +78,7 @@ class AddFollowerActivity: AppCompatActivity() {
             } else {
                 Toast.makeText(this, R.string.add_follower_fail, Toast.LENGTH_SHORT).show()
             }
+            binding.progressBarAddFollower.visibility = View.GONE
         })
     }
 }

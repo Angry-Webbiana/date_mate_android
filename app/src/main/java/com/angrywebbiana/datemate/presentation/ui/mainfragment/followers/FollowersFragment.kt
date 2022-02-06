@@ -51,6 +51,12 @@ class FollowersFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.progressBarFollowers.visibility = View.VISIBLE
+        followersViewModel.requestFollowersList()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

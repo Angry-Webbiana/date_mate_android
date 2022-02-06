@@ -3,8 +3,10 @@ package com.angrywebbiana.datemate.presentation.ui.signup
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,7 @@ import com.angrywebbiana.datemate.R
 import com.angrywebbiana.datemate.databinding.ActivitySignupBinding
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class SignUpActivity: AppCompatActivity() {
@@ -78,6 +81,14 @@ class SignUpActivity: AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {
             }
         })
+
+        binding.etSignUpNickname.setOnKeyListener{v, keyCode, event ->
+            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(binding.etSignUpNickname.windowToken, 0)
+            }
+            true
+        }
 
         binding.btnSignUpSubmit.setOnClickListener {
             if (binding.etSignUpPw.text.toString() != binding.etSignUpPwConfirm.text.toString()) {

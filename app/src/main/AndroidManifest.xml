@@ -51,7 +51,7 @@
         <activity
             android:name="com.angrywebbiana.datemate.presentation.ui.signup.SignUpActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustPan"/>
 
         <activity
             android:name=".presentation.ui.mainfragment.followers.add.AddFollowerActivity"
