@@ -16,5 +16,19 @@ data class FollowersResponse(
 
 data class FollowersMessage(
     @SerializedName("userList")
-    var userList: List<User>
+    var userList: List<FollowersList>
+)
+
+data class FollowersList(
+    @SerializedName("userSeq")
+    var userSeq: Int,
+
+    @SerializedName("relationUserSeq")
+    var relationUserSeq: Int,
+
+    @SerializedName("status")
+    var status: String,
+
+    @SerializedName("user")
+    var user: User
 )

@@ -1,5 +1,6 @@
 package com.angrywebbiana.datemate.presentation.ui.mainfragment.followers.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -7,17 +8,18 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.angrywebbiana.datemate.R
 import com.angrywebbiana.datemate.databinding.ItemFollowersBinding
-import com.angrywebbiana.datemate.domain.model.User
+import com.angrywebbiana.datemate.domain.model.response.FollowersList
 
 class FollowersAdapter(
 
-): ListAdapter<User, FollowersAdapter.ViewHolder>(FollowersDiffCallBack()) {
+): ListAdapter<FollowersList, FollowersAdapter.ViewHolder>(FollowersDiffCallBack()) {
 
     inner class ViewHolder(
         private val binding: ItemFollowersBinding
     ): RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: User) {
+        fun bind(item: FollowersList) {
             binding.follower = item
+            Log.d("TESTLOG", "follower name: ${item.user.userName} / email: ${item.user.email}")
         }
     }
 

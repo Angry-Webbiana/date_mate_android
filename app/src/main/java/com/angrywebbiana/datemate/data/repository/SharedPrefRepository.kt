@@ -12,8 +12,8 @@ class SharedPrefRepository @Inject constructor(
         sharedPrefModule.login = value
     }
 
-    fun getUserSeq(): String? = sharedPrefModule.userSeq
-    fun setUserSeq(value: String) {
+    fun getUserSeq(): Int? = sharedPrefModule.userSeq
+    fun setUserSeq(value: Int) {
         sharedPrefModule.userSeq = value
     }
 

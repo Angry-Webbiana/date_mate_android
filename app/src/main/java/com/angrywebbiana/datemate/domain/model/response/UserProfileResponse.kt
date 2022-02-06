@@ -3,21 +3,18 @@ package com.angrywebbiana.datemate.domain.model.response
 import com.angrywebbiana.datemate.domain.model.User
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
+data class UserProfileResponse(
     @SerializedName("responseCode")
     var responseCode: String,
 
     @SerializedName("message")
-    var message: LoginMessage,
+    var message: UserProfileMessage,
 
     @SerializedName("errMsg")
     var errMessage: String?
 )
 
-data class LoginMessage(
-    @SerializedName("user")
+data class UserProfileMessage(
+    @SerializedName("profile")
     var user: User,
-
-    @SerializedName("token")
-    var token: String
 )

@@ -18,9 +18,9 @@ class SharedPrefModule @Inject constructor(
         get() = sharedPref.getBoolean("login", false)
         set(value) = sharedPref.edit().putBoolean("login", value).apply()
 
-    var userSeq: String?
-        get() = sharedPref.getString("userSeq", "")
-        set(value) = sharedPref.edit().putString("userSeq", value).apply()
+    var userSeq: Int?
+        get() = sharedPref.getInt("userSeq", 0)
+        set(value) = value?.let { sharedPref.edit().putInt("userSeq", it).apply() }!!
 
     var email: String?
         get() = sharedPref.getString("email", "")

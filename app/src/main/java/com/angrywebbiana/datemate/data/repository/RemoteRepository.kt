@@ -1,10 +1,14 @@
 package com.angrywebbiana.datemate.data.repository
 
 import com.angrywebbiana.datemate.data.network.dmapi.DMApi
+import com.angrywebbiana.datemate.domain.model.request.AddFollower
 import com.angrywebbiana.datemate.domain.model.request.Login
 import com.angrywebbiana.datemate.domain.model.request.SignUp
+import com.angrywebbiana.datemate.domain.model.request.UserProfile
+import com.angrywebbiana.datemate.domain.model.response.CommonResponse
 import com.angrywebbiana.datemate.domain.model.response.FollowersResponse
 import com.angrywebbiana.datemate.domain.model.response.LoginResponse
+import com.angrywebbiana.datemate.domain.model.response.UserProfileResponse
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
@@ -19,4 +23,10 @@ class RemoteRepository @Inject constructor(
 
     fun getFollowers(param: String): Single<FollowersResponse> =
         DMApiClient.getFollowers(param)
+
+    fun getUserProfile(param: UserProfile): Single<UserProfileResponse> =
+        DMApiClient.getUserProfile(param.auth, param.email)
+
+    fun postAddFollower(param: AddFollower): Single<CommonResponse> =
+        DMApiClient.postAddFriend(param.auth, param.targetUserSeq)
 }

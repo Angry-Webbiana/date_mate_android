@@ -1,15 +1,15 @@
 package com.angrywebbiana.datemate.presentation.ui.mainfragment.followers
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.angrywebbiana.datemate.R
 import com.angrywebbiana.datemate.databinding.FragmentFollowersBinding
 import com.angrywebbiana.datemate.presentation.ui.mainfragment.followers.adapter.FollowersAdapter
+import com.angrywebbiana.datemate.presentation.ui.mainfragment.followers.add.AddFollowerActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +30,7 @@ class FollowersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFollowersBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
 
         binding.rvFollowers.also {
             it.layoutManager = LinearLayoutManager(this.context)
@@ -53,5 +54,23 @@ class FollowersFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.followers_action_bar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_add_friend -> {
+                startActivity(Intent(this.requireContext(), AddFollowerActivity::class.java))
+            }
+
+            R.id.action_delete_friend -> {
+
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

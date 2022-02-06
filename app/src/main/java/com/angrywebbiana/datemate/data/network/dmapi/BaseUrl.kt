@@ -8,5 +8,7 @@ class BaseUrl {
         const val DM_API_POST_LOGIN = "member/signin"
 
         const val DM_API_GET_FOLLOWERS_LIST = "user/friend"
+        const val DM_API_GET_USER_PROFILE = "user/profile"
+        const val DM_API_POST_ADD_FRIEND = "user/friend"
     }
 }

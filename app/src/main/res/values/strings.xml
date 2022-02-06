@@ -28,11 +28,13 @@
     <string name="nickname">Nick name</string>
     <string name="sign_up_success">Success!</string>
     <string name="sign_up_fali">Fail</string>
+    <string name="sign_up_email_explain">Please input your E-Mail.</string>
     <string name="sign_up_id_explain">It can be created within 4~12 characters of English.</string>
     <string name="sign_up_pw_explain">Please mix English and numbers and enter at least 6 characters.</string>
     <string name="sign_up_pw_confirm_success_explain">The password is exactly the same.</string>
     <string name="sign_up_pw_confirm_fail_explain">The password doesn\'t match.</string>
     <string name="sign_up_nickname_explain">Please write a nickname within 2~10 letters.</string>
+    <string name="sign_up_name_explain">Please input your name.</string>
 
     <string name="home_info_hello">Hello. %s,</string>
     <string name="home_info_location">The current location is\n%s %s %s.</string>
@@ -43,6 +45,16 @@
     <string name="add_schedule_contents_hint">Enter the content.</string>
 
     <string name="is_not_exist_followers">There\'s no friend added.</string>
+    <string name="add_follower">Add friend</string>
+    <string name="delete_follower">Delete friend</string>
+    <string name="search_follower">Search friend</string>
+    <string name="is_not_found_user">There is no corresponding user.</string>
+    <string name="can_not_add_self">You can\'t add yourself as a friend.</string>
+    <string name="add_follower_success">Success!</string>
+    <string name="add_follower_fail">Failed to add friends. Please try again.</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <string name="news_dynamic">%s news</string>
 

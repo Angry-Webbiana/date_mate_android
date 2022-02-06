@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.angrywebbiana.datemate.data.repository.SharedPrefRepository
 import com.angrywebbiana.datemate.domain.model.User
+import com.angrywebbiana.datemate.domain.model.response.FollowersList
 import com.angrywebbiana.datemate.domain.model.response.FollowersResponse
 import com.angrywebbiana.datemate.domain.usecase.GetFollowersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,8 +20,8 @@ class FollowersViewModel @Inject constructor(
     private val sharedPrefRepository: SharedPrefRepository
 ) : ViewModel() {
 
-    private val _followersListLiveData = MutableLiveData<List<User>>()
-    val followersListLiveData: LiveData<List<User>> get() = _followersListLiveData
+    private val _followersListLiveData = MutableLiveData<List<FollowersList>>()
+    val followersListLiveData: LiveData<List<FollowersList>> get() = _followersListLiveData
 
     private val token by lazy {
         sharedPrefRepository.getToken()

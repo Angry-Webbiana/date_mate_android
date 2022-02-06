@@ -2,13 +2,14 @@ package com.angrywebbiana.datemate.presentation.ui.mainfragment.followers.adapte
 
 import androidx.recyclerview.widget.DiffUtil
 import com.angrywebbiana.datemate.domain.model.User
+import com.angrywebbiana.datemate.domain.model.response.FollowersList
 
-class FollowersDiffCallBack(): DiffUtil.ItemCallback<User>() {
-    override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
-        return oldItem.userSeq == newItem.userSeq
+class FollowersDiffCallBack(): DiffUtil.ItemCallback<FollowersList>() {
+    override fun areItemsTheSame(oldItem: FollowersList, newItem: FollowersList): Boolean {
+        return oldItem.relationUserSeq == newItem.relationUserSeq
     }
 
-    override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+    override fun areContentsTheSame(oldItem: FollowersList, newItem: FollowersList): Boolean {
         return oldItem == newItem
     }
 }

@@ -6,17 +6,17 @@
     <data>
         <variable
             name="follower"
-            type="com.angrywebbiana.datemate.domain.model.User" />
-
+            type="com.angrywebbiana.datemate.domain.model.response.FollowersList" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="70dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:id="@+id/cv_add_follower"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -29,14 +29,24 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/tv_follower_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_follower_email"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:layout_marginStart="15dp"
                     android:textColor="@color/default_text_color"
-                    android:text="@{follower.userName}"/>
+                    android:text="@{follower.user.userName}"/>
+
+                <TextView
+                    android:id="@+id/tv_follower_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_follower_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_follower_name"
+                    android:text="@{follower.user.email}"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
