@@ -50,7 +50,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="60dp"
-            android:background="@drawable/bar_background"
+            android:background="@drawable/custom_button_background"
             android:textColor="@color/white"
             android:text="@string/search_follower"
             android:textSize="16sp"/>
@@ -113,7 +113,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/cv_add_follower"
             android:layout_marginTop="60dp"
-            android:background="@drawable/bar_background"
+            android:background="@drawable/custom_button_background"
             android:textColor="@color/white"
             android:text="@string/add_follower"
             android:textSize="14sp"/>
@@ -126,7 +126,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="@id/cv_add_follower"
             android:layout_marginTop="60dp"
-            android:background="@drawable/bar_background"
+            android:background="@drawable/custom_button_background"
             android:textColor="@color/white"
             android:text="@string/cancel"
             android:textSize="14sp"/>

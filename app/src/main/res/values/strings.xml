@@ -44,6 +44,15 @@
     <string name="add_schedule_title_hint">Enter the title.</string>
     <string name="add_schedule_contents_hint">Enter the content.</string>
 
+    <string name="is_not_exist_group">There\'s no group added.</string>
+    <string name="group_create">Create group</string>
+    <string name="group_name">Group name</string>
+    <string name="group_desc">Group description</string>
+    <string name="group_name_explain">Please enter your group name.</string>
+    <string name="group_desc_explain">Please enter the group description.</string>
+    <string name="create_group_success">Success!</string>
+    <string name="create_group_fail">Failed to create group. Please try again.</string>
+
     <string name="is_not_exist_followers">There\'s no friend added.</string>
     <string name="add_follower">Add friend</string>
     <string name="delete_follower">Delete friend</string>

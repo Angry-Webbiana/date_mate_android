@@ -58,6 +58,10 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
 
+        <activity android:name=".presentation.ui.mainfragment.groupspace.create.CreateGroupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
+
     </application>
 
 </manifest>

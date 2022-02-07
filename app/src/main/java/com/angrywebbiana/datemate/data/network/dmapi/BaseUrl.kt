@@ -10,5 +10,11 @@ class BaseUrl {
         const val DM_API_GET_FOLLOWERS_LIST = "user/friend"
         const val DM_API_GET_USER_PROFILE = "user/profile"
         const val DM_API_POST_ADD_FRIEND = "user/friend"
+
+        const val DM_API_GET_GROUP = "group"
+        const val DM_API_POST_GROUP_CREATE = "group"
+        const val DM_API_GET_GROUP_LIST = "group/list"
+        const val DM_API_POST_GROUP_INVITE = "group/invite"
+        const val DM_API_POST_GROUP_LEAVE = "group/leave"
     }
 }

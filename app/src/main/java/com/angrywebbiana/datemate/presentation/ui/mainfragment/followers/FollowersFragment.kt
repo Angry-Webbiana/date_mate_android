@@ -37,7 +37,6 @@ class FollowersFragment : Fragment() {
             it.adapter = followersAdapter
         }
 
-        followersViewModel.requestFollowersList()
         followersViewModel.followersListLiveData.observe(viewLifecycleOwner, {
             if (it.isNotEmpty()) {
                 followersAdapter.submitList(it)
@@ -53,6 +52,7 @@ class FollowersFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        binding.tvIsNotExistFollowers.visibility = View.GONE
         binding.progressBarFollowers.visibility = View.VISIBLE
         followersViewModel.requestFollowersList()
     }

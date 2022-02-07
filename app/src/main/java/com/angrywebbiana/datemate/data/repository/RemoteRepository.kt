@@ -1,14 +1,8 @@
 package com.angrywebbiana.datemate.data.repository
 
 import com.angrywebbiana.datemate.data.network.dmapi.DMApi
-import com.angrywebbiana.datemate.domain.model.request.AddFollower
-import com.angrywebbiana.datemate.domain.model.request.Login
-import com.angrywebbiana.datemate.domain.model.request.SignUp
-import com.angrywebbiana.datemate.domain.model.request.UserProfile
-import com.angrywebbiana.datemate.domain.model.response.CommonResponse
-import com.angrywebbiana.datemate.domain.model.response.FollowersResponse
-import com.angrywebbiana.datemate.domain.model.response.LoginResponse
-import com.angrywebbiana.datemate.domain.model.response.UserProfileResponse
+import com.angrywebbiana.datemate.domain.model.request.*
+import com.angrywebbiana.datemate.domain.model.response.*
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
@@ -29,4 +23,19 @@ class RemoteRepository @Inject constructor(
 
     fun postAddFollower(param: AddFollower): Single<CommonResponse> =
         DMApiClient.postAddFriend(param.auth, param.targetUserSeq)
+
+    fun getGroupInfo(param: GroupInfo): Single<GroupInfoResponse> =
+        DMApiClient.getGroupInfo(param.auth, param.groupId)
+
+    fun getGroupList(param: String): Single<GroupListResponse> =
+        DMApiClient.getGroupList(param)
+
+    fun postGroupCreate(param: CreateGroup): Single<CommonResponse> =
+        DMApiClient.postGroupCreate(param.auth, param.createGroupRequest)
+
+    fun postGroupInvite(param: InviteOrLeaveGroup): Single<CommonResponse> =
+        DMApiClient.postGroupInvite(param.auth, param.inviteOrLeaveGroupRequest)
+
+    fun postGroupLeave(param: InviteOrLeaveGroup): Single<CommonResponse> =
+        DMApiClient.postGroupLeave(param.auth, param.inviteOrLeaveGroupRequest)
 }

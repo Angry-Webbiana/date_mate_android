@@ -18,4 +18,6 @@
 
     <color name="calendar_selected_1">#D4AA9D</color>
 
+    <color name="group_list_background_color">#C1BAB8</color>
+
 </resources>

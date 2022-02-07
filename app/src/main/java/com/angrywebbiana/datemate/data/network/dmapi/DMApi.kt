@@ -1,13 +1,7 @@
 package com.angrywebbiana.datemate.data.network.dmapi
 
-import com.angrywebbiana.datemate.domain.model.request.AddFollower
-import com.angrywebbiana.datemate.domain.model.request.Login
-import com.angrywebbiana.datemate.domain.model.request.SignUp
-import com.angrywebbiana.datemate.domain.model.request.TargetUserSeq
-import com.angrywebbiana.datemate.domain.model.response.CommonResponse
-import com.angrywebbiana.datemate.domain.model.response.FollowersResponse
-import com.angrywebbiana.datemate.domain.model.response.LoginResponse
-import com.angrywebbiana.datemate.domain.model.response.UserProfileResponse
+import com.angrywebbiana.datemate.domain.model.request.*
+import com.angrywebbiana.datemate.domain.model.response.*
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.*
 
@@ -42,5 +36,39 @@ interface DMApi {
     fun postAddFriend(
         @Header("Authorization") auth: String,
         @Body seq: TargetUserSeq
+    ): Single<CommonResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @GET(BaseUrl.DM_API_GET_GROUP)
+    fun getGroupInfo(
+        @Header("Authorization") auth: String,
+        @Query("groupId") id: Int
+    ): Single<GroupInfoResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @GET(BaseUrl.DM_API_GET_GROUP_LIST)
+    fun getGroupList(
+        @Header("Authorization") auth: String,
+    ): Single<GroupListResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST(BaseUrl.DM_API_POST_GROUP_CREATE)
+    fun postGroupCreate(
+        @Header("Authorization") auth: String,
+        @Body createGroupRequest: CreateGroupRequest
+    ): Single<CommonResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST(BaseUrl.DM_API_POST_GROUP_INVITE)
+    fun postGroupInvite(
+        @Header("Authorization") auth: String,
+        @Body inviteGroupRequest: InviteOrLeaveGroupRequest
+    ): Single<CommonResponse>
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST(BaseUrl.DM_API_POST_GROUP_LEAVE)
+    fun postGroupLeave(
+        @Header("Authorization") auth: String,
+        @Body leaveGroupRequest: InviteOrLeaveGroupRequest
     ): Single<CommonResponse>
 }
