@@ -17,6 +17,13 @@
     <color name="bnv_default_icon_color">#737373</color>
 
     <color name="calendar_selected_1">#D4AA9D</color>
+    <color name="calendar_selected_2">#BF998E</color>
+    <color name="calendar_selected_3">#AC8A80</color>
+    <color name="calendar_selected_4">#9B7C73</color>
+    <color name="calendar_selected_5">#846A62</color>
+
+    <color name="background_second_color">#AC6868</color>
+    <color name="time_picker_selected_color">#CFA7A7</color>
 
     <color name="group_list_background_color">#C1BAB8</color>
 

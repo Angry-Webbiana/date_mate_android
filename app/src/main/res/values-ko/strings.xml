@@ -41,7 +41,7 @@
     <string name="home_info_weather">%s의 현재 기온은 %d℃입니다.</string>
     <string name="home_not_exist_schedule">저장된 일정이 없어요</string>
 
-    <string name="add_schedule_title_hint">제목을 입력하세요</string>
+    <string name="add_schedule_title_hint">일정 제목을 입력하세요</string>
     <string name="add_schedule_contents_hint">내용을 입력하세요</string>
 
     <string name="is_not_exist_group">추가된 그룹이 없어요</string>
@@ -52,6 +52,9 @@
     <string name="group_desc_explain">그룹 설명을 입력해주세요.</string>
     <string name="create_group_success">그룹 생성 완료!</string>
     <string name="create_group_fail">그룹 생성에 실패하였습니다. 다시 시도해주세요.</string>
+
+    <string name="group_space_ranking_title">다수의 멤버가 가능해요</string>
+    <string name="group_space_fix_date">확정된 일정이에요</string>
 
     <string name="is_not_exist_followers">추가된 친구가 없어요</string>
     <string name="add_follower">친구 추가</string>

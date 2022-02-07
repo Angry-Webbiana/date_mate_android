@@ -23,7 +23,7 @@ class GroupSpaceFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val groupAdapter by lazy {
-        GroupAdapter()
+        GroupAdapter(requireContext())
     }
 
     override fun onCreateView(

@@ -21,7 +21,7 @@ class FollowersFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val followersAdapter by lazy {
-        FollowersAdapter()
+        FollowersAdapter(requireContext())
     }
 
     override fun onCreateView(

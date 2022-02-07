@@ -1,5 +1,6 @@
 package com.angrywebbiana.datemate.presentation.ui.mainfragment.privatespace
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +8,16 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.angrywebbiana.datemate.MainActivity
 import com.angrywebbiana.datemate.R
+import com.angrywebbiana.datemate.data.repository.SharedPrefRepository
 import com.angrywebbiana.datemate.databinding.CalendarDayLayoutBinding
 import com.angrywebbiana.datemate.databinding.FragmentPrivateSpaceBinding
+import com.angrywebbiana.datemate.presentation.ui.mainfragment.followers.add.AddFollowerActivity
+import com.angrywebbiana.datemate.presentation.ui.schedule.AddScheduleActivity
 import com.angrywebbiana.datemate.presentation.util.daysOfWeekFromLocale
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
-import com.kizitonwose.calendarview.model.InDateStyle
 import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
 import com.kizitonwose.calendarview.utils.yearMonth
@@ -21,6 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class PrivateSpaceFragment : Fragment() {
@@ -33,6 +38,9 @@ class PrivateSpaceFragment : Fragment() {
     private val selectedDates = mutableSetOf<LocalDate>()
     private val today = LocalDate.now()
     private val monthTitleFormatter = DateTimeFormatter.ofPattern("MMMM")
+
+    @Inject
+    lateinit var sharedPrefRepository: SharedPrefRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -111,6 +119,12 @@ class PrivateSpaceFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        val userName = sharedPrefRepository.getUserName()
+        (activity as MainActivity).supportActionBar?.title = "$userName's space"
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -133,6 +147,7 @@ class PrivateSpaceFragment : Fragment() {
                 }
             }
             view.setOnLongClickListener {
+                startActivity(Intent(requireContext(), AddScheduleActivity::class.java))
                 return@setOnLongClickListener true
             }
         }

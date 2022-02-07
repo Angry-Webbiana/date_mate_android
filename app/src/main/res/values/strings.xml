@@ -53,6 +53,9 @@
     <string name="create_group_success">Success!</string>
     <string name="create_group_fail">Failed to create group. Please try again.</string>
 
+    <string name="group_space_ranking_title">Possible date</string>
+    <string name="group_space_fix_date">Fix date</string>
+
     <string name="is_not_exist_followers">There\'s no friend added.</string>
     <string name="add_follower">Add friend</string>
     <string name="delete_follower">Delete friend</string>
