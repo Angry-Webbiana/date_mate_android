@@ -35,6 +35,9 @@
     <string name="sign_up_pw_confirm_fail_explain">The password doesn\'t match.</string>
     <string name="sign_up_nickname_explain">Please write a nickname within 2~10 letters.</string>
     <string name="sign_up_name_explain">Please input your name.</string>
+    <string name="sign_up_agree_terms">I agree to collect and use personal information.</string>
+    <string name="sign_up_show_terms">Personal information processing policy.</string>
+    <string name="sign_up_please_agree_terms">Please agree to collect and use personal information.</string>
 
     <string name="home_info_hello">Hello. %s,</string>
     <string name="home_info_location">The current location is\n%s %s %s.</string>

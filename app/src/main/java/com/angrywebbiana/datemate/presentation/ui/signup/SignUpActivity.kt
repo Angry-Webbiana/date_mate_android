@@ -1,5 +1,6 @@
 package com.angrywebbiana.datemate.presentation.ui.signup
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,6 +13,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.angrywebbiana.datemate.R
 import com.angrywebbiana.datemate.databinding.ActivitySignupBinding
+import com.angrywebbiana.datemate.presentation.ui.WebViewActivity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -93,6 +95,8 @@ class SignUpActivity: AppCompatActivity() {
         binding.btnSignUpSubmit.setOnClickListener {
             if (binding.etSignUpPw.text.toString() != binding.etSignUpPwConfirm.text.toString()) {
                 Snackbar.make(binding.root, R.string.sign_up_pw_confirm_fail_explain, Snackbar.LENGTH_SHORT).show()
+            } else if (!binding.cbAgreeTerms.isChecked) {
+                Snackbar.make(binding.root, R.string.sign_up_please_agree_terms, Snackbar.LENGTH_SHORT).show()
             } else {
                 signUpViewModel.submitSignUp(
                     binding.etSignUpId.text.toString(),
@@ -105,6 +109,12 @@ class SignUpActivity: AppCompatActivity() {
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                 )
             }
+        }
+
+        binding.tvTerms.setOnClickListener {
+            val intent = Intent(this@SignUpActivity, WebViewActivity::class.java)
+            intent.putExtra("url", "file:///android_asset/www/policy.html")
+            startActivity(intent)
         }
 
         signUpViewModel.isSubmitSuccessLiveData.observe(this, {

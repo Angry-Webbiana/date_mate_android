@@ -71,6 +71,9 @@
         <activity android:name=".presentation.ui.mainfragment.followers.FollowerSpaceActivity"
             android:exported="false"/>
 
+        <activity android:name=".presentation.ui.WebViewActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
