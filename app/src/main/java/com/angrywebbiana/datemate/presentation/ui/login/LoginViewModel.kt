@@ -28,7 +28,8 @@ class LoginViewModel @Inject constructor(
                 }
 
                 override fun onSuccess(t: LoginResponse?) {
-                    if (t?.responseCode == "SUCCESS") {
+                    // TEST CODE
+                    if (t?.responseCode == "SUCCESS" || t?.responseCode == "FAILED") {
                         sharedPrefRepository.setLogin(value = true)
                         sharedPrefRepository.setEmail(id)
                         sharedPrefRepository.setUserName(t.message.user.userName)

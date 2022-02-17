@@ -171,6 +171,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_sign_up_nickname"
         app:layout_constraintBottom_toTopOf="@id/btn_sign_up_submit"
         app:layout_constraintLeft_toLeftOf="@id/et_sign_up_nickname"
+        android:textColor="@color/default_text_color"
         android:text="@string/sign_up_agree_terms"/>
 
     <TextView
