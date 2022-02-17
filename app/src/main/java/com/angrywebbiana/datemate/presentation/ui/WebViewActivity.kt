@@ -21,6 +21,8 @@ class WebViewActivity: AppCompatActivity() {
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         binding.webView.webViewClient = WebViewClient() // 클릭시 새창 안뜨게
         webSettings = binding.webView.settings //세부 세팅 등록
         webSettings.javaScriptEnabled = true // 웹페이지 자바스클비트 허용 여부
