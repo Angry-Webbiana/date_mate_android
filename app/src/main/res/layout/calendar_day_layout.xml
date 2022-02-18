@@ -28,6 +28,14 @@
             android:layout_gravity="center"
             android:background="@drawable/calendar_selected_1_bg"
             android:visibility="gone"/>
+
+        <View
+            android:id="@+id/view_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_gravity="bottom"
+            android:background="@color/background_second_color"
+            android:visibility="gone"/>
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

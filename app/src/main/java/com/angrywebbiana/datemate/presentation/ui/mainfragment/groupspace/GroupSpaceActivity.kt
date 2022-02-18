@@ -63,9 +63,6 @@ class GroupSpaceActivity: AppCompatActivity() {
                 val selectedView = container.bindingCalendarDay.viewSelectedBg
                 if (day.owner == DayOwner.THIS_MONTH) {
                     when {
-                        selectedDates.contains(day.date) -> {
-                            selectedView.visibility = View.VISIBLE
-                        }
                         today == day.date -> {
                             textView.setTextColor(ContextCompat.getColor(this@GroupSpaceActivity, R.color.purple_200))
                             //selectedView.visibility = View.VISIBLE
@@ -89,6 +86,18 @@ class GroupSpaceActivity: AppCompatActivity() {
                         }
                         day.date == LocalDate.parse("2022-02-19") -> {
                             selectedView.background = ContextCompat.getDrawable(this@GroupSpaceActivity, R.drawable.calendar_selected_2_bg)
+                            selectedView.visibility = View.VISIBLE
+                        }
+                        day.date == LocalDate.parse("2022-02-20") -> {
+                            if (selectedDates.contains(day.date)) {
+                                selectedView.background = ContextCompat.getDrawable(this@GroupSpaceActivity, R.drawable.calendar_selected_2_bg)
+                            } else {
+                                selectedView.background = ContextCompat.getDrawable(this@GroupSpaceActivity, R.drawable.calendar_selected_1_bg)
+                            }
+                            selectedView.visibility = View.VISIBLE
+
+                        }
+                        selectedDates.contains(day.date) -> {
                             selectedView.visibility = View.VISIBLE
                         }
                         else -> {

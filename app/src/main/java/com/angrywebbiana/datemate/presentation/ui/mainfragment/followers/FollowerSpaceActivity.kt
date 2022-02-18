@@ -1,5 +1,6 @@
 package com.angrywebbiana.datemate.presentation.ui.mainfragment.followers
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,14 +9,17 @@ import androidx.core.content.ContextCompat
 import com.angrywebbiana.datemate.R
 import com.angrywebbiana.datemate.databinding.ActivityFollowerSpaceBinding
 import com.angrywebbiana.datemate.databinding.CalendarDayLayoutBinding
+import com.angrywebbiana.datemate.presentation.ui.schedule.AddScheduleActivity
 import com.angrywebbiana.datemate.presentation.util.daysOfWeekFromLocale
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.DayOwner
 import com.kizitonwose.calendarview.ui.DayBinder
 import com.kizitonwose.calendarview.ui.ViewContainer
 import com.kizitonwose.calendarview.utils.yearMonth
+import java.sql.Date
 import java.time.LocalDate
 import java.time.YearMonth
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 class FollowerSpaceActivity: AppCompatActivity() {
@@ -73,19 +77,31 @@ class FollowerSpaceActivity: AppCompatActivity() {
                             selectedView.visibility = View.VISIBLE
                         }
                         day.date == LocalDate.parse("2022-02-11") -> {
-                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_3_bg)
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
                             selectedView.visibility = View.VISIBLE
                         }
                         day.date == LocalDate.parse("2022-02-12") -> {
-                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_5_bg)
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
                             selectedView.visibility = View.VISIBLE
                         }
                         day.date == LocalDate.parse("2022-02-13") -> {
-                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_4_bg)
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
                             selectedView.visibility = View.VISIBLE
                         }
                         day.date == LocalDate.parse("2022-02-19") -> {
-                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_2_bg)
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
+                            selectedView.visibility = View.VISIBLE
+                        }
+                        day.date == LocalDate.parse("2022-02-20") -> {
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
+                            selectedView.visibility = View.VISIBLE
+                        }
+                        day.date == LocalDate.parse("2022-02-27") -> {
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
+                            selectedView.visibility = View.VISIBLE
+                        }
+                        day.date == LocalDate.parse("2022-02-28") -> {
+                            selectedView.background = ContextCompat.getDrawable(this@FollowerSpaceActivity, R.drawable.calendar_selected_1_bg)
                             selectedView.visibility = View.VISIBLE
                         }
                         else -> {
@@ -145,6 +161,11 @@ class FollowerSpaceActivity: AppCompatActivity() {
                 }
             }
             view.setOnLongClickListener {
+                val intent = Intent(this@FollowerSpaceActivity, AddScheduleActivity::class.java)
+                intent.putExtra("spaceType", "F")
+                val timestamp = Date.from(day.date.atStartOfDay(ZoneId.systemDefault()).toInstant())
+                intent.putExtra("dateTimestamp", timestamp.time)
+                startActivity(intent)
                 return@setOnLongClickListener true
             }
         }

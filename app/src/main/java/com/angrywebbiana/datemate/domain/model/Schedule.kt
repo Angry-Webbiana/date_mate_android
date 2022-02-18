@@ -7,14 +7,14 @@ import java.util.*
 
 @Entity(tableName = "schedule")
 data class Schedule(
-    @PrimaryKey
-    var seq: Int,
+    @PrimaryKey(autoGenerate = true)
+    var seq: Int = 0,
 
     @ColumnInfo(name = "schedule_name")
-    var scheduleName: String,
+    var scheduleName: String?,
 
     @ColumnInfo(name = "schedule_desc")
-    var scheduleDesc: String,
+    var scheduleDesc: String?,
 
     @ColumnInfo(name = "start_date")
     var startDate: Date,
@@ -29,5 +29,5 @@ data class Schedule(
     var status: Int,
 
     @ColumnInfo(name = "create_user_seq")
-    var createUserSeq: Int
+    var createUserSeq: Int?
 )

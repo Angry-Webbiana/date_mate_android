@@ -4,12 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
-
+        <variable
+            name="schedule"
+            type="com.angrywebbiana.datemate.domain.model.Schedule" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:padding="10dp">
 
@@ -30,7 +31,7 @@
             app:layout_constraintBottom_toTopOf="@id/tv_list_item_time"
             android:layout_marginStart="10dp"
             android:textColor="@color/default_text_color"
-            android:text="22/02/05" />
+            bind_date="@{schedule.startDate}" />
 
         <TextView
             android:id="@+id/tv_list_item_time"
@@ -40,7 +41,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/tv_list_item_date"
             android:textColor="@color/default_text_color"
-            android:text="02:30 PM"/>
+            bind_time="@{schedule.startDate}"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +52,7 @@
             app:layout_constraintRight_toRightOf="parent"
             android:textColor="@color/default_text_color"
             android:textStyle="bold"
-            android:text="안녕하세요" />
+            android:text="@{schedule.scheduleName}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

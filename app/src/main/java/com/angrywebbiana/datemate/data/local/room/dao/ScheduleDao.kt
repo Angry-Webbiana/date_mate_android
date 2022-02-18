@@ -6,6 +6,7 @@ import androidx.room.Query
 import com.angrywebbiana.datemate.domain.model.Schedule
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
+import java.util.*
 
 @Dao
 interface ScheduleDao {
